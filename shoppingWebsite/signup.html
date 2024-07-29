@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>signup</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body class="bg-secondary">
+        <div class="container p-4 mt-5 bg-body rounded mx-auto">
+            <div class="">
+                <form class="" method="post" action="https://httpbin.org/post">
+                    <h1 class="display-6 text-center">註冊頁面</h1>
+        
+                    <div class="mb-3">
+                        <label for="usr" class="form-label text-center w-100">使用者名稱</label>
+                        <input type="text" class="form-control w-100" id="usr" placeholder="請輸入名稱" name="usr">
+                        
+                    </div>
+        
+                    <div class="mb-3">
+                        <label for="pwd"  class="form-label text-center w-100">密碼</label>
+                        <input type="password" class="form-control w-100" id="pwd" placeholder="請輸入密碼" name="pswd">
+                    </div>
+        
+                    <div class="mb-3">
+                        <label for="location" class="form-label text-center w-100">你來自</label>
+                        <select class="hob w-100">
+                            <option class="location text-center " name="hob">臺北</option>
+                            <option class="location text-center" name="hob">美國</option>
+                        </select>
+                    </div>
+        
+                    <div class="mb-3 w-100 px-4">
+                        <label for="btn-group" class="form-label text-center mb-3 w-100">性別</label>
+                        <div class="w-100 position-relative d-flex justify-content-between">
+                            <div class="form-check  d-inline-block ">
+                                <div class="">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="gen1">
+                                    <label class="form-check-label text-center" for="flexRadioDefault1">男性</label>
+                                </div>
+                            </div>
+                            <div class="form-check d-inline-block">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="gen2" checked>
+                                <label class="form-check-label text-center" for="flexRadioDefault2">女性</label>
+                            </div>
+                            <div class="form-check  d-inline-block">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="gen3" checked>
+                                <label class="form-check-label text-center" for="flexRadioDefault2">其他</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 ">
+                        <label for="hob" class="form-label text-center w-100">興趣愛好</label>
+                        <select class="hob w-100">
+                            <option class="hob text-center " name="hob">閱讀</option>
+                            <option class="hob text-center" name="hob">旅行</option>
+                            <option class="hob text-center" name="hob">運動</option>
+                            <option class="hob text-center" name="hob">音樂</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3 ">
+                        <label for="in" class="text-center w-100">自我介紹</label>
+                        <input id="in" class="w-100" type="text"  placeholder="輸入自我介紹">
+                    </div>
+        
+                    <button type="submit" class="btn btn-primary text-center w-100" >提交</button>
+                </form>
+            </div>
+        </div>
+        <script src="./assets/js/submitHandler.js"></script>
+    </body>
+</html>

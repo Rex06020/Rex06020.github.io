@@ -1,0 +1,42 @@
+//做到一半
+btnObj = document.querySelector('button')
+
+btnObj.addEventListener('click', function(event) {
+    event.preventDefault(); //hault submit
+    const inputObj = document.getElementsByTagName('input')
+    console.log(inputObj)
+
+    for (var i = 0; i < inputObj.length; i++) {
+        if (inputObj[i].value === "") {
+            alert("輸入不能為空")
+            return;
+        }
+    }
+
+    
+    
+    fetch('http://httpbin/post', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('result').textContent = data
+    })
+    console.log('Async request end:', new Date().toLocaleTimeString());
+})
+
+function redirect(event) {
+    event.preventDefault();
+
+    document.querySelector('form')
+    
+    window.location.href("../../product.html");
+}
+
+function store(inputObj) {
+    
+}

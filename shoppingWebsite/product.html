@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>product</title>
+    <style>
+        body {
+          font-family: Tahoma, sans-serif;
+          background-color: rgb(164, 164, 164);
+        }
+        .case {
+            margin: 10px;
+            background-color: aliceblue;
+            position: relative;
+            margin: 50px;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            border-radius: 4px;
+        }
+        .tit {
+            display: block;
+            position: relative;
+            width: 100%;
+            text-align: center;
+        }
+        .card {
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            padding-bottom: 15px;
+            border: 1px solid;
+            border-radius: 4px;
+            width: 32.8%;
+            border-color: rgb(164, 164, 164);
+        }
+        img {
+            width: 30%;
+            margin-top: 10px;
+        }
+        .amount {
+            padding-bottom: 30px;
+        }
+        .price {
+            color: rgb(0, 166, 255);
+            padding-bottom: 30px;
+        }
+        .sub {
+            margin-top: 10px;
+            display: block;
+            position: relative;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form class="case" method="post" action="https://httpbin.org/post">
+        <div class="tit"><h1>商品頁面</h1></div>
+        <div class="card">
+            <div class="img-case">
+                <img src="./assets/images/test293.png">
+            </div>
+            <div class="name"><h3 id="n1">商品1</h3></div>
+            <div class="price" id="p1">NT$ 100</div>
+            <div class="amount">
+                數量
+                <select id="a1">
+                    <option class="num" name="num">0</option>
+                    <option class="num" name="num">1</option>
+                    <option class="num" name="num">2</option>
+                    <option class="num" name="num">3</option>
+                </select>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img-case">
+                <img src="./assets/images/test293.png">
+            </div>
+            <div class="name"><h3 id="n2">商品2</h3></div>
+            <div class="price" id="p2">NT$ 200</div>
+            <div class="amount">
+                數量
+                <select id="a2">
+                    <option class="num" name="num">0</option>
+                    <option class="num" name="num">1</option>
+                    <option class="num" name="num">2</option>
+                    <option class="num" name="num">3</option>
+                </select>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img-case">
+                <img src="./assets/images/test293.png">
+            </div>
+            <div class="name"><h3 id="n3">商品3</h3></div>
+            <div class="price" id="p3">NT$ 300</div>
+            <div class="amount">
+                數量
+                <select id="a3">
+                    <option class="num" name="num">0</option>
+                    <option class="num" name="num">1</option>
+                    <option class="num" name="num">2</option>
+                    <option class="num" name="num">3</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <p id="total">小計: </p>
+        </div>
+        <div  class="sub">
+            <button type="submit">結帳</button>
+        </div>
+    </form>
+    <script src="./assets/js/subtotal.js"></script>
+</body>
+</html>
