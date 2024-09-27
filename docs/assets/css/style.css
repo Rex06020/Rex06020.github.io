@@ -285,20 +285,16 @@ nav.navbar.bootsnav .navbar-toggle i{color: #F1BD20;}
     height: 300px; /*468px*/
 }
 .about-list-icon{
-    display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 0;
+    bottom: 90;
     left: 0;
-    width: 109%;
+    width: 102%;
     height: 90px;
-    background: #6c6a1f;
+    background: #007A78;
 }
 /*.ab-list-icon */
-.about-list-icon ul {
-    display: flex;
-}
 .about-list-icon  ul li a {
     padding-right: 22px;
     cursor:pointer;
@@ -307,9 +303,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #F1BD20;}
 .about-list-icon ul li a {
     cursor: pointer;
     color: #fff;
-    display: inline-block;
     border: 2px solid;
-    margin-left: 20px;
     border-radius: 8px;
     width: 30px;
     height: 30px;
