@@ -1,95 +1,395 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Transparency Control</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #f9f9f9;
-      height: 100vh;
-    }
+<!doctype html>
+<html class="no-js" lang="en">
 
-    .image-container {
-      position: relative;
-      max-width: 90vw;
-      overflow: hidden;
-    }
+    <head>
+        <!-- meta data -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    .image-container img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-    }
+        <!--font-family-->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
+        
+        <!-- title of site -->
+        <title>羅弘翔的網站</title>
 
-    .image-container .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      transition: opacity 0.2s ease;
-      object-fit: contain;
-      opacity: 0; /* start transparent */
-    }
+        <!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
 
-    .slider-container {
-      margin-top: 1rem;
-      width: 90%;
-      max-width: 400px;
-    }
+        <!--font-awesome.min.css-->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
-    input[type="range"] {
-      width: 100%;
-			accent-color: #953539;
-    }
-  </style>
-</head>
-<body>
-  <div class="image-container" id="imageContainer">
-    <img src="105277_0.jpg" alt="Base Image">
-    <img src="105276_1.png" alt="Overlay Image" class="overlay" id="overlayImg">
-  </div>
+		<!--flat icon css-->
+		<link rel="stylesheet" href="assets/css/flaticon.css">
 
-  <div class="slider-container" id="sliderContainer">
-    <label for="transparency">大哥的怒氣值:</label>
-    <input type="range" id="transparency" min="0" max="100" value="0">
-  </div>
+		<!--animate.css-->
+        <link rel="stylesheet" href="assets/css/animate.css">
 
-  <script>
-    const slider = document.getElementById('transparency');
-    const overlayImg = document.getElementById('overlayImg');
-    const imageContainer = document.getElementById('imageContainer');
-    const sliderContainer = document.getElementById('sliderContainer');
-
-    // Ensure overlay is transparent after it finishes loading
-    overlayImg.addEventListener('load', () => {
-      overlayImg.style.opacity = 0;
-      slider.value = 0; // sync slider with initial state
-    });
+        <!--owl.carousel.css-->
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
 		
-    // Update overlay transparency
-    slider.addEventListener('input', () => {
-      const opacityValue = slider.value / 100;
-      overlayImg.style.opacity = opacityValue;
-    });
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
+        
+        <!--style.css-->
+        <link rel="stylesheet" href="assets/css/style.css">
+        
+        <!--responsive.css-->
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 
-    // Adjust image height dynamically
-    function adjustImageHeight() {
-      const sliderTop = sliderContainer.getBoundingClientRect().top;
-      imageContainer.style.maxHeight = sliderTop + 'px';
-    }
+    </head>
+	
+	<body>
+		<!-- top-area Start -->
+		<header class="top-area">
+			<div class="header-area">
+				<!-- Start Navigation -->
+			    <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
 
-    window.addEventListener('resize', adjustImageHeight);
-    window.addEventListener('load', adjustImageHeight);
-  </script>
-</body>
+			        <div class="container">
+
+			            <!-- Start Header Navigation -->
+			            <div class="navbar-header">
+			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+			                    <i class="fa fa-bars"></i>
+			                </button>
+			                <a class="navbar-brand" href="index.html">LOABLE</a>
+			            </div><!--/.navbar-header-->
+			            <!-- End Header Navigation -->
+
+			            <!-- Collect the nav links, forms, and other content for toggling -->
+			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+			                <li class=" smooth-menu active"></li>
+			                    <li class="smooth-menu"><a href="#about">簡介</a></li>
+			                    <li class="smooth-menu"><a href="#skills">技能</a></li>
+			                </ul><!--/.nav -->
+			            </div><!-- /.navbar-collapse -->
+			        </div><!--/.container-->
+			    </nav><!--/nav-->
+			    <!-- End Navigation -->
+			</div><!--/.header-area-->
+
+		    <div class="clearfix"></div>
+
+		</header><!-- /.top-area-->
+		<!-- top-area End -->
+	
+		<!--welcome-hero start -->
+		<section id="welcome-hero" class="welcome-hero">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="header-text">
+							<h2>hi <span>,</span> i am <br> rex <br> lo <span>.</span>   </h2>
+							<p>web developer</p>
+							<a href="assets/download/001-羅弘翔的履歷-240925.pdf" download>download resume</a>
+						</div><!--/.header-text-->
+					</div><!--/.col-->
+				</div><!-- /.row-->
+			</div><!-- /.container-->
+
+		</section><!--/.welcome-hero-->
+		<!--welcome-hero end -->
+
+		<!--about start -->
+		<section id="about" class="about">
+			<div class="section-heading text-center">
+				<h2>about me</h2>
+			</div>
+			<div class="container">
+				<div class="about-content">
+					<div class="row">
+						<div class="col-sm-7">
+							<div class="single-about-txt">
+								<h3>
+									我是羅弘翔，畢業於逢甲大學資訊工程系。個性友善、平易近人，喜歡與人團隊合作完成事情所帶來的成就感。<br />
+									於勞動部與文化大學主辦的JAVA工程師養成班訓練期間，我不僅擔任專案小組組長，負責統籌小組工作，也在技術層面進行了多次技術更新。從最初的Spring框架轉換為Spring MVC，再進一步提升到Spring Boot；同時前端部分也由JSP切換至React，經歷了完整的技術堆疊過程。這樣的經歷讓我理解如何應對技術變革與需求變更。<br />
+									我期望在未來能夠持續精進自己的技術能力，尤其是深入學習後端開發及系統架構設計。我希望能夠參與更多具有挑戰性的專案，並有機會接觸大型系統的設計與開發。期盼能為公司做出貢獻，與同事相互學習，共同成長。
+								</h3>
+								<hr>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="single-about-add-info">
+											<p>學歷</p>
+											<a class="bold">勞動部與文化大學</a>
+											<a class="bold">Java工程師養成班 - 2024, 10</a>
+                      <br />
+                      <br />
+											<a class="bold">逢甲大學</a>
+											<a class="bold">學士 - 2022, 6</a>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="single-about-add-info">
+											<p>email</p>
+											<a class="bold">rex843729598 at gmail.com</a>
+										</div>
+                    <div class="rol">
+                      <div class="col-sm-3">
+                        <a href="https://github.com/Rex06020"><i class="fa-brands fa-github"></i></a>
+                      </div>
+                      <div class="col-sm-3">
+                        <a href="https://hackmd.io/@J_xAKm0uSCWN9cYgVpEDvA"><i class="fa-solid fa-file-lines"></i></a>
+                      </div>
+                      <div class="col-sm-3">
+                        <a href="https://www.linkedin.com/in/rex-%E7%BE%85-6ab2b1320/"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-offset-2 col-sm-3">
+							<div class="single-about-img">
+								<img src="assets/images/about/profile_image.jpg" alt="profile_image">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!--/.about-->
+		<!--about end -->
+
+		<!--profiles start -->
+		<!--section id="profiles" class="profiles">
+			<div class="profiles-details">
+				<div class="section-heading text-center">
+					<h2>profiles</h2>
+				</div>
+				<div class="container">
+					<div class="profiles-content">
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="single-profile">
+									<div class="profile-txt">
+										<a href=""><i class="flaticon-themeforest"></i></a>
+										<div class="profile-icon-name">themeforest</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href=""><i class="flaticon-themeforest"></i></a>
+											<div class="profile-icon-name">themeforest</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="single-profile">
+									<div class="profile-txt">
+										<a href=""><i class="flaticon-dribbble"></i></a>
+										<div class="profile-icon-name">dribbble</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href=""><i class="flaticon-dribbble"></i></a>
+											<div class="profile-icon-name">dribbble</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="single-profile">
+									<div class="profile-txt">
+										<a href=""><i class="flaticon-behance-logo"></i></a>
+										<div class="profile-icon-name">behance</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href=""><i class="flaticon-behance-logo"></i></a>
+											<div class="profile-icon-name">behance</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="single-profile profile-no-border">
+									<div class="profile-txt">
+										<a href=""><i class="flaticon-github-logo"></i></a>
+										<div class="profile-icon-name">github</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href=""><i class="flaticon-github-logo"></i></a>
+											<div class="profile-icon-name">github</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="profile-border"></div>
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="single-profile">
+									<div class="profile-txt">
+										<a href=""><i class="flaticon-flickr-website-logo-silhouette"></i></a>
+										<div class="profile-icon-name">flickR</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href=""><i class="flaticon-flickr-website-logo-silhouette"></i></a>
+											<div class="profile-icon-name">flickR</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="single-profile">
+									<div class="profile-txt">
+										<a href=""><i class="flaticon-smug"></i></a>
+										<div class="profile-icon-name">smungMung</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href=""><i class="flaticon-smug"></i></a>
+											<div class="profile-icon-name">smungMung</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="single-profile">
+									<div class="profile-txt">
+										<a href=""><i class="flaticon-squarespace-logo"></i></a>
+										<div class="profile-icon-name">squareSpace</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href=""><i class="flaticon-squarespace-logo"></i></a>
+											<div class="profile-icon-name">squareSpace</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="single-profile profile-no-border">
+									<div class="profile-txt">
+										<a href=""><i class="flaticon-bitbucket-logotype-camera-lens-in-perspective"></i></a>
+										<div class="profile-icon-name">bitBucket</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href=""><i class="flaticon-bitbucket-logotype-camera-lens-in-perspective"></i></a>
+											<div class="profile-icon-name">bitBucket</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section--><!--/.profiles-->
+		<!--profiles end -->
+
+		<!--portfolio start -->
+		<!--section id="portfolio" class="portfolio">
+			<div class="portfolio-details">
+				<div class="section-heading text-center">
+					<h2>作品</h2>
+				</div>
+				<div class="container">
+					<div class="portfolio-content">
+						<div class="isotope">
+							<div class="row">
+
+								<div class="col-sm-4">
+									<div class="item">
+										<img src="assets/images/portfolio/p1.jpg" alt="portfolio image"/>
+										<div class="isotope-overlay">
+											<a href="../shoppingWebsite/signup.html">
+												購物網站
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-8">
+									<div class="item">
+										<h4 class="title">購物網站</h4>
+										<p class="description">
+											實作出登入、商品頁面、購物車
+										</p>
+										<div class="isotope-overlay">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section--><!--/.portfolio-->
+		<!--portfolio end -->
+
+		<!--footer-copyright start-->
+		<footer id="footer-copyright" class="footer-copyright">
+			<div class="container">
+				<div class="hm-footer-copyright text-center">
+          <hr />
+					<p>
+						&copy; copyright yourname. design and developed by <a href="https://www.themesine.com/">themesine</a>
+					</p><!--/p-->
+				</div><!--/.text-center-->
+			</div><!--/.container-->
+
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" ></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.footer-copyright-->
+		<!--footer-copyright end-->
+		
+		<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+		<script src="assets/js/jquery.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+		
+		<!-- jquery.sticky.js -->
+		<script src="assets/js/jquery.sticky.js"></script>
+		
+		<!-- for progress bar start-->
+
+		<!-- progressbar js -->
+		<script src="assets/js/progressbar.js"></script>
+
+		<!-- appear js -->
+		<script src="assets/js/jquery.appear.js"></script>
+
+		<!-- for progress bar end -->
+
+		<!--owl.carousel.js-->
+        <script src="assets/js/owl.carousel.min.js"></script>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		
+        
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+
+		<!--fontawesome 5-->
+	    <script src="https://kit.fontawesome.com/25367ab321.js" crossorigin="anonymous"></script>
+        
+    </body>
 </html>
